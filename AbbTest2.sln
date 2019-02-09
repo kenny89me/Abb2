@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbbTest2", "AbbTest2\AbbTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbbTest2.Tests", "AbbTest2.Tests\AbbTest2.Tests.csproj", "{F46FEBDD-BDE7-4D68-9446-11EDB624B613}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService", "WcfService\WcfService.csproj", "{675EC27B-CAE6-4D81-A77C-AABD4FF74478}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F46FEBDD-BDE7-4D68-9446-11EDB624B613}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F46FEBDD-BDE7-4D68-9446-11EDB624B613}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F46FEBDD-BDE7-4D68-9446-11EDB624B613}.Release|Any CPU.Build.0 = Release|Any CPU
+		{675EC27B-CAE6-4D81-A77C-AABD4FF74478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675EC27B-CAE6-4D81-A77C-AABD4FF74478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675EC27B-CAE6-4D81-A77C-AABD4FF74478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675EC27B-CAE6-4D81-A77C-AABD4FF74478}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<AbbTest2.Models.Measure>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Motor.MotorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Timestamp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxTorque)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxPressure)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActualCurrentA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActualRevsRpm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActualPressureBar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Difference)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Motor.MotorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Timestamp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxTorque)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxPressure)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActualCurrentA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActualRevsRpm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActualPressureBar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Difference)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MeasureId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MeasureId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MeasureId })
+        </td>
+    </tr>
+}
+
+</table>
