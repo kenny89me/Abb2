@@ -7,7 +7,30 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbbTest2", "AbbTest2\AbbTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbbTest2.Tests", "AbbTest2.Tests\AbbTest2.Tests.csproj", "{F46FEBDD-BDE7-4D68-9446-11EDB624B613}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService", "WcfService\WcfService.csproj", "{675EC27B-CAE6-4D81-A77C-AABD4FF74478}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WCFService2(1)", "WCFService2\", "{AD40EA28-0D01-458A-A76C-F32A7C664454}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{CACAF3CB-7FC4-41FC-8E63-894431DEF7C1}|AbbTest2.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55764"
+		Debug.AspNetCompiler.PhysicalPath = "WCFService2\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55764\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55764"
+		Release.AspNetCompiler.PhysicalPath = "WCFService2\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55764\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55764"
+		SlnRelativePath = "WCFService2\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService3", "WcfService3\WcfService3.csproj", "{3B97805B-FE85-4BF0-B1E3-2E22DFAE61A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +46,14 @@ Global
 		{F46FEBDD-BDE7-4D68-9446-11EDB624B613}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F46FEBDD-BDE7-4D68-9446-11EDB624B613}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F46FEBDD-BDE7-4D68-9446-11EDB624B613}.Release|Any CPU.Build.0 = Release|Any CPU
-		{675EC27B-CAE6-4D81-A77C-AABD4FF74478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{675EC27B-CAE6-4D81-A77C-AABD4FF74478}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{675EC27B-CAE6-4D81-A77C-AABD4FF74478}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{675EC27B-CAE6-4D81-A77C-AABD4FF74478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD40EA28-0D01-458A-A76C-F32A7C664454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD40EA28-0D01-458A-A76C-F32A7C664454}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD40EA28-0D01-458A-A76C-F32A7C664454}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD40EA28-0D01-458A-A76C-F32A7C664454}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{3B97805B-FE85-4BF0-B1E3-2E22DFAE61A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B97805B-FE85-4BF0-B1E3-2E22DFAE61A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B97805B-FE85-4BF0-B1E3-2E22DFAE61A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B97805B-FE85-4BF0-B1E3-2E22DFAE61A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -6,7 +7,8 @@ using System.Web;
 
 namespace AbbTest2.Models
 {
-    public class Measure
+    [Serializable]
+    public class Measure : IEnumerable
     {
         [Key]
         public int MeasureId { get; set; }
@@ -30,5 +32,9 @@ namespace AbbTest2.Models
 
         public virtual Motor Motor { get; set; }
 
+        public IEnumerator GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

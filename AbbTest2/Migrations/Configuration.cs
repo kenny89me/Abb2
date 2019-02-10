@@ -1,17 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Data.Entity;
-using AbbTest2.Models;
 
 
-namespace AbbTest2.DAL
+namespace AbbTest2.Migrations
 {
-    public class AbbTest2Initializer : DropCreateDatabaseIfModelChanges<AbbTest2Context>
+    using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
+    using System.Collections.Generic;
+    using AbbTest2.Models;
+
+    internal sealed class Configuration : DbMigrationsConfiguration<AbbTest2.DAL.AbbTest2Context>
     {
-        protected override void Seed(AbbTest2Context context)
+        public Configuration()
         {
+            AutomaticMigrationsEnabled = false;
+            ContextKey = "AbbTest2.DAL.AbbTest2Context";
+        }
+
+        protected override void Seed(AbbTest2.DAL.AbbTest2Context context)
+        {
+
             var motors = new List<Motor>
             {
                 new Motor{ MotorName = "Motor1", MotorType = MotorType.Electric, MaxPower = 2.0m, VoltageV = 230m, CurrentA = 8.7m, FuelCons = null, MaxTorque = null, MaxPressure = null, Displacemnt = null},
@@ -49,6 +57,6 @@ namespace AbbTest2.DAL
             measures.ForEach(s => context.Measures.Add(s));
             context.SaveChanges();
         }
-        
     }
+
 }

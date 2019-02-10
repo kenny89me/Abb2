@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/AbbTest2.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AbbTest2.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:57421/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfMeasure">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Measure" nillable="true" type="tns:Measure" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMeasure" nillable="true" type="tns:ArrayOfMeasure" />
+  <xs:complexType name="Measure">
+    <xs:sequence>
+      <xs:element name="_x003C_ActualCurrentA_x003E_k__BackingField" nillable="true" type="xs:decimal" />
+      <xs:element name="_x003C_ActualPressureBar_x003E_k__BackingField" nillable="true" type="xs:decimal" />
+      <xs:element name="_x003C_ActualRevsRpm_x003E_k__BackingField" nillable="true" type="xs:decimal" />
+      <xs:element name="_x003C_CurrentA_x003E_k__BackingField" nillable="true" type="xs:decimal" />
+      <xs:element name="_x003C_Difference_x003E_k__BackingField" nillable="true" type="xs:decimal" />
+      <xs:element name="_x003C_MaxPressure_x003E_k__BackingField" nillable="true" type="xs:decimal" />
+      <xs:element name="_x003C_MaxTorque_x003E_k__BackingField" nillable="true" type="xs:decimal" />
+      <xs:element name="_x003C_MeasureId_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_MotorId_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_MotorName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Motor_x003E_k__BackingField" nillable="true" type="tns:Motor" />
+      <xs:element name="_x003C_Timestamp_x003E_k__BackingField" type="ser:duration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Measure" nillable="true" type="tns:Measure" />
+  <xs:complexType name="Motor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentA" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Displacemnt" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FuelCons" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MaxPower" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MaxPressure" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MaxTorque" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Measures" nillable="true" type="tns:ArrayOfMeasure" />
+      <xs:element minOccurs="0" name="MotorId" type="xs:int" />
+      <xs:element minOccurs="0" name="MotorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MotorType" nillable="true" type="tns:MotorType" />
+      <xs:element minOccurs="0" name="VoltageV" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Motor" nillable="true" type="tns:Motor" />
+  <xs:simpleType name="MotorType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Electric" />
+      <xs:enumeration value="Combustion" />
+      <xs:enumeration value="Hydraulic" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MotorType" nillable="true" type="tns:MotorType" />
+</xs:schema>

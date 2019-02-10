@@ -8,17 +8,27 @@ using System.Web;
 using System.Web.Mvc;
 using AbbTest2.DAL;
 using AbbTest2.Models;
+using AbbTest2.ServiceReference1;
+using AbbTest2.ServiceReference2;
+
+
+
+
 
 namespace AbbTest2.Controllers
 {
     public class MeasuresController : Controller
     {
-        private AbbTest2Context db = new AbbTest2Context();
+        AbbTest2Context db = new AbbTest2Context();
+
+        //private AbbTest2Context db = new AbbTest2Context();
 
         // GET: Measures
         public ActionResult Index()
         {
-            var measures = db.Measures.Include(m => m.Motor); 
+
+
+            var measures = db.Measures.Include(m => m.Motor);
             foreach (var mes in measures)
             {
                 mes.CurrentA = mes.Motor.CurrentA;
@@ -28,7 +38,7 @@ namespace AbbTest2.Controllers
                 switch (mes.MotorId)
                 {
                     case 1:
-                        mes.Difference = mes.CurrentA - mes.ActualCurrentA;
+                        mes.Difference = mes.Motor.CurrentA - mes.ActualCurrentA;
                         break;
 
                     case 2:
@@ -39,15 +49,62 @@ namespace AbbTest2.Controllers
                         mes.Difference = mes.MaxPressure - mes.ActualPressureBar;
                         break;
                 }
-   
-            }
-            db.SaveChanges();
 
+
+                db.SaveChanges();
+
+            }
             return View(measures.ToList());
+
         }
 
+        public ActionResult Index2()
+        {
+
+            var measures = db.Measures.Include(m => m.Motor);
+            foreach (var mes in measures)
+            {
+                mes.CurrentA = mes.Motor.CurrentA;
+                mes.MaxTorque = mes.Motor.MaxTorque;
+                mes.MaxPressure = mes.Motor.MaxPressure;
+
+                switch (mes.MotorId)
+                {
+                    case 1:
+                        mes.Difference = mes.Motor.CurrentA - mes.ActualCurrentA;
+                        break;
+
+                    case 2:
+                        mes.Difference = mes.MaxTorque - mes.ActualRevsRpm;
+                        break;
+
+                    case 3:
+                        mes.Difference = mes.MaxPressure - mes.ActualPressureBar;
+                        break;
+                }
+
+            }
+
+            db.SaveChanges();
+
+
+            ServiceClient l = new ServiceClient();
+            ServiceReference2.Service1Client k = new Service1Client();
+
+
+            /*List<object> mlkList = null;
+            foreach (var k in l.GetMeasures())
+            {
+
+            }*/
+
+            return View(k.GetMeasures());
+        }
+
+
+
         // GET: Measures/Details/5
-        public ActionResult Details(int? id)
+        /*public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -79,11 +136,11 @@ namespace AbbTest2.Controllers
             {
                 db.Measures.Add(measure);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index2");
             }
 
             ViewBag.MotorId = new SelectList(db.Motors, "MotorId", "MotorName", measure.MotorId);
-            return View(measure);
+            return View(db.Measures);
         }
 
         // GET: Measures/Edit/5
@@ -113,7 +170,7 @@ namespace AbbTest2.Controllers
             {
                 db.Entry(measure).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index2");
             }
             ViewBag.MotorId = new SelectList(db.Motors, "MotorId", "MotorName", measure.MotorId);
             return View(measure);
@@ -142,7 +199,7 @@ namespace AbbTest2.Controllers
             Measure measure = db.Measures.Find(id);
             db.Measures.Remove(measure);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index2");
         }
 
         protected override void Dispose(bool disposing)
@@ -152,6 +209,6 @@ namespace AbbTest2.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
+        }*/
     }
 }

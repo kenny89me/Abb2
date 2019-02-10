@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<AbbTest2.Models.Measure>
-
 @{
     ViewBag.Title = "Index";
 }
@@ -7,7 +6,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    
 </p>
 <table class="table">
     <tr>
@@ -77,9 +76,7 @@
             @Html.DisplayFor(modelItem => item.Difference)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MeasureId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MeasureId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MeasureId })
+           
         </td>
     </tr>
 }

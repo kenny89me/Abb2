@@ -1,0 +1,27 @@
+﻿@model List<AbbTest2.ServiceReference2.Measure>
+
+@{
+    ViewBag.Title = "Index2";
+}
+
+<h2>Index2</h2>
+
+<p>
+    
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Differencek__BackingField)
+        </td>
+    </tr>
+}
+
+</table>
