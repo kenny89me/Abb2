@@ -17,7 +17,7 @@ namespace AbbTest2.DAL
                 new Motor{ MotorName = "Motor1", MotorType = MotorType.Electric, MaxPower = 2.0m, VoltageV = 230m, CurrentA = 8.7m, FuelCons = null, MaxTorque = null, MaxPressure = null, Displacemnt = null},
                 new Motor{ MotorName = "Motor2", MotorType = MotorType.Electric, MaxPower = 50.0m, VoltageV = null, CurrentA = null, FuelCons = 4, MaxTorque = 3000, MaxPressure = null, Displacemnt = null},
                 new Motor{ MotorName = "Motor3", MotorType = MotorType.Electric, MaxPower = 1.0m, VoltageV = null, CurrentA = null, FuelCons = null, MaxTorque = null, MaxPressure = 160, Displacemnt = 16}
-
+                new Motor{ MotorName = "Motor3", MotorType = MotorType.Electric, MaxPower = 1.0m, VoltageV = null, CurrentA = null, FuelCons = null, MaxTorque = null, MaxPressure = 160, Displacemnt = 16}
             };
 
             motors.ForEach(s => context.Motors.Add(s));
